@@ -1,0 +1,77 @@
+graph TD
+    Start[Someone Sends Input] --> Clean[Clean the Input]
+    
+    Clean --> Check{Check for Problems}
+    
+    Check --> Personal[Personal Info]
+    Check --> Attack[Hacking Attempts]
+    Check --> Bad[Harmful Content]
+    
+    Personal --> Hide[Hide Personal Info]
+    Attack --> Block[Block the Attack]
+    Bad --> Remove[Remove Bad Content]
+    
+    Hide --> Risk[Check Risk Level]
+    Block --> Risk
+    Remove --> Risk
+    
+    Risk --> Level{How Risky Is It?}
+    
+    Level -->|Low Risk| GoAhead[Process Normally]
+    Level -->|Medium Risk| Careful[Add Limits]
+    Level -->|High Risk| Review[Need Human Review]
+    Level -->|Very High Risk| Stop[Block Completely]
+    
+    GoAhead --> DoWork[Do the Work]
+    Careful --> DoWork
+    Review --> Human[Human Checks It]
+    
+    DoWork --> Output[Create Response]
+    Human --> Output
+    
+    Output --> CheckOutput{Check the Response}
+    
+    CheckOutput --> Rules[Check Company Rules]
+    Rules --> Ethics[Is It Ethical?]
+    Rules --> Legal[Is It Legal?]
+    Rules --> Brand[Does It Match Our Values?]
+    
+    Ethics --> Score[Safety Score]
+    Legal --> Score
+    Brand --> Score
+    
+    Score --> Safe{Is It Safe Enough?}
+    
+    Safe -->|Yes| Limits[Check Tool Limits]
+    Safe -->|No| Pass[Allow Response]
+    
+    Limits --> Protected[Use Protected Mode]
+    Protected --> Permissions[Check Permissions]
+    Permissions --> Approve[Need Approval]
+    
+    Approve --> Final{Final Decision}
+    Pass --> Final
+    
+    Final -->|Allow| Send[Send to User]
+    Final -->|Change| Edit[Fix the Response]
+    Final -->|Block| Reject[Explain Why Not]
+    
+    Send --> Log[Record What Happened]
+    Edit --> Log
+    Reject --> Log
+    Stop --> Log
+    
+    Log --> Watch[Watch for Patterns]
+    Watch --> Override{Can Human Override?}
+    
+    Override -->|Yes| Update[Update Rules]
+    Override -->|No| Learn[System Learns]
+    
+    Update --> End[Safety Check Complete]
+    Learn --> End
+
+    style Start fill:#e1f5fe
+    style Level fill:#ffccbc
+    style CheckOutput fill:#fff59d
+    style Final fill:#fff9c4
+    style End fill:#c8e6c9

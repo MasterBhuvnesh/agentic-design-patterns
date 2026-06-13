@@ -1,0 +1,18 @@
+# Exclude specific directories
+.obsidian/
+__pycache__/
+.venv/
+
+# Exclude specific files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

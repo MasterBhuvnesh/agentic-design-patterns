@@ -1,0 +1,86 @@
+graph TD
+    Start[Research Goal] --> Scout[Scout Broadly]
+    
+    Scout --> Sources{Explore Sources}
+    
+    Sources --> Literature[Academic Papers]
+    Sources --> Data[Datasets]
+    Sources --> Experts[Domain Experts]
+    Sources --> Web[Web Resources]
+    Sources --> Experiments[Experimental Data]
+    
+    Literature --> Collect[Collect Information]
+    Data --> Collect
+    Experts --> Collect
+    Web --> Collect
+    Experiments --> Collect
+    
+    Collect --> Map[Map Knowledge Space]
+    Map --> Identify[Identify Key Areas]
+    
+    Identify --> Cluster{Cluster Themes}
+    
+    Cluster --> Theme1[Theme Group 1]
+    Cluster --> Theme2[Theme Group 2]
+    Cluster --> Theme3[Theme Group 3]
+    Cluster --> ThemeN[Theme Group N]
+    
+    Theme1 --> Analyze[Analyze Patterns]
+    Theme2 --> Analyze
+    Theme3 --> Analyze
+    ThemeN --> Analyze
+    
+    Analyze --> Select[Select Deep-Dive Targets]
+    
+    Select --> Criteria{Selection Criteria}
+    
+    Criteria --> Novel[Novelty Score]
+    Criteria --> Impact[Potential Impact]
+    Criteria --> Feasible[Feasibility]
+    Criteria --> Gaps[Knowledge Gaps]
+    
+    Novel --> Pick[Pick Exploration Targets]
+    Impact --> Pick
+    Feasible --> Pick
+    Gaps --> Pick
+    
+    Pick --> DeepDive[Deep Investigation]
+    
+    DeepDive --> Extract{Extract Artifacts}
+    
+    Extract --> Notes[Research Notes]
+    Extract --> Bibliography[Bibliography]
+    Extract --> Datasets[Curated Datasets]
+    Extract --> Contacts[Expert Contacts]
+    Extract --> Models[Conceptual Models]
+    
+    Notes --> Synthesize[Synthesize Insights]
+    Bibliography --> Synthesize
+    Datasets --> Synthesize
+    Contacts --> Synthesize
+    Models --> Synthesize
+    
+    Synthesize --> Insights[Key Insights]
+    Insights --> Questions[Open Questions]
+    Questions --> Hypotheses[Generate Hypotheses]
+    
+    Hypotheses --> Check{Iteration Limit?}
+    
+    Check -->|Not Reached| Design[Design Experiments]
+    Check -->|Reached| Conclude[Conclude Exploration]
+    
+    Design --> Test[Test Hypotheses]
+    Test --> Results[Gather Results]
+    Results --> Scout
+    
+    Conclude --> Report[Generate Report]
+    Report --> Findings[Document Findings]
+    Findings --> NextSteps[Recommend Next Steps]
+    
+    NextSteps --> End[Discovery Complete]
+
+    style Start fill:#e1f5fe
+    style Cluster fill:#fff59d
+    style Criteria fill:#fff9c4
+    style Check fill:#f3e5f5
+    style End fill:#c8e6c9

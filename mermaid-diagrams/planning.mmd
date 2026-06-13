@@ -1,0 +1,52 @@
+graph TD
+    Start[Goal Input] --> Decompose[Decompose into Milestones]
+    Decompose --> Map[Create Dependency Graph]
+    
+    Map --> Constraints{Check Constraints}
+    Constraints --> Data[Data Availability]
+    Constraints --> Auth[Authorization Check]
+    Constraints --> Budget[Budget Limits]
+    Constraints --> Time[Deadlines/SLAs]
+    
+    Data --> Plan[Generate Step-by-Step Plan]
+    Auth --> Plan
+    Budget --> Plan
+    Time --> Plan
+    
+    Plan --> Assign[Assign Agent/Tool per Step]
+    Assign --> Step1[Execute Step 1]
+    
+    Step1 --> Check1{Checkpoint}
+    Check1 -->|Success| Step2[Execute Step 2]
+    Check1 -->|Blocked| Analyze[Analyze Blocker]
+    
+    Step2 --> Check2{Checkpoint}
+    Check2 -->|Success| Step3[Execute Step 3]
+    Check2 -->|Issue| Analyze
+    
+    Step3 --> Check3{Checkpoint}
+    Check3 -->|Success| StepN[Execute Step N]
+    Check3 -->|Problem| Analyze
+    
+    Analyze --> NewInfo{New Information?}
+    NewInfo -->|Yes| Replan[Adjust Plan]
+    NewInfo -->|No| Escalate[Escalate Issue]
+    
+    Replan --> Assign
+    Escalate --> Handle[Handle Exception]
+    
+    StepN --> Progress[Track Progress]
+    Progress --> Complete{Goals Met?}
+    
+    Complete -->|Yes| Accept[Acceptance Criteria Check]
+    Complete -->|No| Analyze
+    
+    Accept --> PostMortem[Generate Post-Mortem]
+    Handle --> PostMortem
+    PostMortem --> End[Close Task]
+
+    style Start fill:#e1f5fe
+    style Constraints fill:#fff9c4
+    style NewInfo fill:#fff59d
+    style Complete fill:#f3e5f5
+    style End fill:#c8e6c9

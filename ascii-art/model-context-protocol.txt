@@ -1,0 +1,50 @@
+╔══════════════════════════════════════════════════╗
+║        MODEL CONTEXT PROTOCOL (MCP)               ║
+╚══════════════════════════════════════════════════╝
+
+    ┌─────────────────┐
+    │  MCP REGISTRY   │
+    └─────────────────┘
+           ↓
+    ╔═══════════════╗
+    ║   MANIFESTS   ║
+    ╠═══════════════╣
+    ║ • Tools       ║
+    ║ • Data        ║
+    ║ • Services    ║
+    ╚═══════════════╝
+           ↓
+    [DISCOVERY API]
+           ↓
+       LLM AGENT
+           ↓
+    ┌─────────────┐
+    │ Permission  │
+    │   Check     │
+    └─────────────┘
+         ✓ ↓ ✗
+    ┌─────────────┐
+    │   CALL      │
+    │  RESOURCE   │
+    └─────────────┘
+           ↓
+    [AUDIT + TRACE]
+
+KEY CONCEPTS:
+• Standardized interface
+• Resource discovery
+• Permission scoping
+• Version management
+
+SUMMARY:
+Model Context Protocol provides a standardized
+interface for AI agents to discover and use
+external tools, data sources, and services. A
+registry publishes manifests describing available
+resources; agents query a discovery API, then
+invoke resources subject to permission checks.
+All calls are audited and traced. Version
+management handles API evolution gracefully.
+The pattern trades implementation overhead for
+enterprise-grade security, discoverability,
+and interoperability across diverse systems.

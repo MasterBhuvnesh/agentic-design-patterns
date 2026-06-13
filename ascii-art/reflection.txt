@@ -1,0 +1,45 @@
+╔══════════════════════════════════════════════════╗
+║            REFLECTION PATTERN                     ║
+╚══════════════════════════════════════════════════╝
+
+       [GENERATE v1]
+            ↓
+       ┌─────────┐
+       │ CRITIC  │←── Rubrics
+       │  AGENT  │    Tests
+       └─────────┘    Checks
+            ↓
+        PASS? NO
+            ↓
+       ┌─────────┐
+       │FEEDBACK │
+       └─────────┘
+            ↓
+       ┌─────────┐
+       │ REVISE  │→ [GENERATE v2]
+       └─────────┘        ↓
+            ↑         PASS? NO
+            └─────────────┘
+         (Max 3 iterations)
+                ↓
+           PASS? YES
+                ↓
+          [FINAL OUTPUT]
+
+KEY CONCEPTS:
+• Self-critique
+• Iterative improvement
+• Quality rubrics
+• Convergence limits
+
+SUMMARY:
+Reflection generates an initial output, then
+feeds it to a critic agent that evaluates it
+against quality rubrics, tests, and checks.
+If the output fails, structured feedback is
+produced and a revision agent improves it.
+This generate-critique-revise loop repeats up
+to a fixed iteration limit to ensure
+convergence. The pattern trades added latency
+and cost for systematically higher quality by
+separating creation from evaluation.

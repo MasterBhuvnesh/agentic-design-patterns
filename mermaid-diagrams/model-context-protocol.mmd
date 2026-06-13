@@ -1,0 +1,61 @@
+graph TD
+    Start[System Starts Up] --> List[List All Available Tools]
+    
+    List --> Tools[Register Tools]
+    List --> Data[Register Data Sources]
+    List --> Services[Register Services]
+    
+    Tools --> Describe1[Describe What Tool Does]
+    Data --> Describe2[Describe What Data Contains]
+    Services --> Describe3[Describe What Service Offers]
+    
+    Describe1 --> Setup[Set Up Permissions]
+    Describe2 --> Setup
+    Describe3 --> Setup
+    
+    Setup --> Control{Who Can Use What?}
+    
+    Control --> Basic[Basic Access]
+    Basic --> Read[Can View]
+    Basic --> Write[Can Change]
+    Basic --> Run[Can Execute]
+    
+    Read --> Catalog[Create Tool Catalog]
+    Write --> Catalog
+    Run --> Catalog
+    
+    Catalog --> Available[Show What's Available]
+    Available --> Agent[AI Agent Looks for Tools]
+    
+    Agent --> Request{Agent Wants to Use Tool}
+    
+    Request --> Check[Check If Allowed]
+    Check -->|Allowed| Use[Use the Tool]
+    Check -->|Not Allowed| Deny[Explain Why Not]
+    
+    Use --> Execute[Run the Tool]
+    Deny --> Log_Security[Log Security Issue]
+    
+    Execute --> Track[Track What Happened]
+    Track --> Monitor[Monitor Usage]
+    Monitor --> Record[Record in Log]
+    
+    Record --> Version{Is Tool Up to Date?}
+    
+    Version -->|Current| Success[Return Result]
+    Version -->|Old but Works| Warning[Warn But Continue]
+    Version -->|Too Old| Error[Stop and Update]
+    
+    Success --> Save[Save the Contract]
+    Warning --> Update_Soon[Plan to Update]
+    Error --> Must_Update[Force Update Now]
+    
+    Save --> End[Tool Use Complete]
+    Update_Soon --> End
+    Must_Update --> End
+
+    style Start fill:#e1f5fe
+    style Control fill:#fff9c4
+    style Request fill:#fff59d
+    style Version fill:#f3e5f5
+    style End fill:#c8e6c9

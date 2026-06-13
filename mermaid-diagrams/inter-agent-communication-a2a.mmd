@@ -1,0 +1,61 @@
+graph TD
+    Start[Multiple AI Agents Need to Talk] --> Choose{How Should They Communicate?}
+    
+    Choose -->|One Boss| Manager[One Agent Manages Others]
+    Choose -->|Everyone Equal| Direct[Agents Talk Directly]
+    Choose -->|Post Office| Mailbox[Central Message System]
+    
+    Manager --> Setup[Set Up Communication Rules]
+    Direct --> Setup
+    Mailbox --> Setup
+    
+    Setup --> Rules[Message Rules]
+    Rules --> Track[Tracking Number for Each Message]
+    Rules --> Expire[Messages Expire After Time Limit]
+    Rules --> Important[Mark Important Messages]
+    
+    Track --> Check{Check Who Can Talk}
+    Expire --> Check
+    Important --> Check
+    
+    Check --> Verify[Verify Agent Identity]
+    Verify --> Permission[Check What They Can Do]
+    Permission --> Allow[Allow Communication]
+    
+    Allow --> Send[Send Message]
+    Send --> Deliver[Deliver to Right Agent]
+    
+    Deliver --> Receive[Agent Gets Message]
+    Receive --> Process[Process Message]
+    
+    Process --> Reply{Need to Reply?}
+    
+    Reply -->|Yes| Answer[Send Answer Back]
+    Reply -->|No| Log[Record Message Received]
+    
+    Answer --> Watch[Monitor Conversation]
+    Log --> Watch
+    
+    Watch --> Problems{Any Problems?}
+    
+    Problems -->|Endless Loop| Stop[Stop the Loop]
+    Problems -->|Stuck| Fix[Unstick the Agents]
+    Problems -->|Too Long| Timeout[Cancel Old Messages]
+    Problems -->|All Good| Continue[Keep Going]
+    
+    Stop --> Alert[Alert Human]
+    Fix --> Alert
+    Timeout --> Alert
+    Continue --> Record[Save Conversation History]
+    
+    Alert --> Recover[Fix the Problem]
+    Record --> Report[Create Activity Report]
+    
+    Recover --> End[Communication Complete]
+    Report --> End
+
+    style Start fill:#e1f5fe
+    style Choose fill:#fff59d
+    style Check fill:#fff9c4
+    style Problems fill:#f3e5f5
+    style End fill:#c8e6c9

@@ -1,0 +1,42 @@
+╔══════════════════════════════════════════════════╗
+║      INTER-AGENT COMMUNICATION (A2A)              ║
+╚══════════════════════════════════════════════════╝
+
+      [AGENT A]          [AGENT B]
+          ↓                  ↑
+    ┌──────────┐      ┌──────────┐
+    │ MESSAGE  │      │ MESSAGE  │
+    │ SCHEMA   │      │ HANDLER  │
+    └──────────┘      └──────────┘
+          ↓                  ↑
+    ╔════════════════════════╗
+    ║   MESSAGE BROKER       ║
+    ║  • Correlation ID      ║
+    ║  • TTL                 ║
+    ║  • Auth/Scope          ║
+    ╚════════════════════════╝
+          ↓                  ↑
+    ┌──────────┐      ┌──────────┐
+    │  ROUTE   │      │ PROCESS  │
+    └──────────┘      └──────────┘
+          ↓                  ↑
+    Circuit Breaker    [AGENT C]
+    & Deadlock Detection
+
+KEY CONCEPTS:
+• Message protocols
+• Authentication
+• Circuit breakers
+• Conversation tracing
+
+SUMMARY:
+Inter-Agent Communication enables multiple
+specialized agents to collaborate via structured
+messages routed through a broker. Each message
+carries a correlation ID, TTL, and auth scope so
+conversations can be traced and secured. Agents
+send, receive, and reply through the broker while
+circuit breakers and deadlock detectors guard
+against runaway loops or stuck exchanges. This
+pattern trades communication overhead for
+modularity, fault isolation, and scalability.

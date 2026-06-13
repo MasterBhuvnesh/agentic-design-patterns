@@ -1,0 +1,49 @@
+╔══════════════════════════════════════════════════╗
+║        LEARNING & ADAPTATION PATTERN              ║
+╚══════════════════════════════════════════════════╝
+
+    [FEEDBACK SIGNALS]
+      ↙    ↓    ↘
+   Edits Ratings Outcomes
+      ↓    ↓     ↓
+   ┌──────────────┐
+   │  AGGREGATE   │
+   │   & CLEAN    │
+   └──────────────┘
+          ↓
+     Filter Noise
+          ↓
+   ┌──────────────┐
+   │   LEARNING   │
+   │   METHODS    │
+   └──────────────┘
+     ↙    ↓    ↘
+  Prompts Policy Examples
+     ↓     ↓      ↓
+   ┌──────────────┐
+   │   A/B TEST   │
+   └──────────────┘
+        ↙   ↘
+    Better? Worse?
+      ↓      ↓
+   Deploy  Rollback
+      ↓
+  [IMPROVED SYSTEM]
+
+KEY CONCEPTS:
+• Feedback collection
+• Signal validation
+• Multiple learning paths
+• Performance monitoring
+
+SUMMARY:
+Learning and Adaptation lets an AI system improve
+itself from real-world feedback. Signals such as
+user edits, ratings, and task outcomes are
+aggregated, cleaned of noise, and validated.
+The system then updates prompts, policies, or
+few-shot examples and A/B tests each change.
+If metrics improve the update is deployed; if
+they regress it is rolled back. This pattern
+trades engineering complexity for continuous,
+measurable performance gains over time.

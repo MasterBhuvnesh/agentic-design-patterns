@@ -1,0 +1,51 @@
+graph TD
+    Start[User Request] --> Analyze[Analyze Task Requirements]
+    Analyze --> Discover[Discover Available Tools]
+    
+    Discover --> Catalog[Tool Catalog]
+    Catalog --> API1[Web Search API]
+    Catalog --> API2[Database Query Tool]
+    Catalog --> API3[Calculator Function]
+    Catalog --> API4[File System Access]
+    Catalog --> API5[External Service API]
+    
+    Catalog --> Select{Select Appropriate Tool}
+    
+    Select --> Match[Match Capabilities to Need]
+    Match --> Safety{Safety Check}
+    
+    Safety -->|Pass| Prepare[Prepare Tool Call]
+    Safety -->|Fail| Deny[Deny Access with Reason]
+    
+    Prepare --> Validate[Validate Input Parameters]
+    Validate --> Call[Execute Tool with Arguments]
+    
+    Call --> Handle{Handle Response}
+    Handle -->|Success| Parse[Parse Tool Output]
+    Handle -->|Error| ErrorHandle[Error Recovery]
+    Handle -->|Timeout| Retry[Retry with Backoff]
+    
+    ErrorHandle --> Fallback[Use Fallback Method]
+    Retry --> Call
+    
+    Parse --> Normalize[Normalize for LLM]
+    Fallback --> Normalize
+    
+    Normalize --> Process[Process with Context]
+    Process --> Decision{Next Action?}
+    
+    Decision -->|More Tools| Select
+    Decision -->|Complete| Audit[Audit Tool Usage]
+    
+    Deny --> Log[Log Security Event]
+    Audit --> Redact[Redact Sensitive Data]
+    Log --> Redact
+    
+    Redact --> Result[Generate Final Response]
+    Result --> End[Return to User]
+
+    style Start fill:#e1f5fe
+    style Select fill:#fff59d
+    style Safety fill:#ffccbc
+    style Handle fill:#fff9c4
+    style End fill:#c8e6c9

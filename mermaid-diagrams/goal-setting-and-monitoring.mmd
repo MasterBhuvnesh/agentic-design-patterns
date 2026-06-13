@@ -1,0 +1,72 @@
+graph TD
+    Start[What Do We Want to Achieve?] --> Create[Create Clear Goals]
+    
+    Create --> Specific[Make It Specific]
+    Create --> Measurable[Make It Measurable]
+    Create --> Achievable[Make It Achievable]
+    Create --> Relevant[Make It Matter]
+    Create --> TimeBound[Set a Deadline]
+    
+    Specific --> Rules[Set the Rules]
+    Measurable --> Rules
+    Achievable --> Rules
+    Relevant --> Rules
+    TimeBound --> Rules
+    
+    Rules --> Budget[How Much Can We Spend?]
+    Rules --> Resources[What Resources Do We Have?]
+    Rules --> Deadline[When Must It Be Done?]
+    
+    Budget --> Targets[Set Success Targets]
+    Resources --> Targets
+    Deadline --> Targets
+    
+    Targets --> Quality[Set Quality Standards]
+    Quality --> Start_Work[Start Working]
+    
+    Start_Work --> Watch{Watch Progress}
+    
+    Watch --> Status[Check Current Status]
+    Watch --> Save[Save Progress Points]
+    Watch --> Track[Track How We're Doing]
+    
+    Status --> Numbers[Collect the Numbers]
+    Save --> Numbers
+    Track --> Numbers
+    
+    Numbers --> Compare{Are We On Track?}
+    
+    Compare -->|Yes| Continue[Keep Going]
+    Compare -->|Getting Off Track| Alert[Sound the Alarm]
+    Compare -->|Blocked| Escalate[Get Help]
+    
+    Alert --> Why[Find Out Why]
+    Escalate --> Why
+    
+    Why --> Fix{How to Fix It?}
+    
+    Fix --> Adjust[Change the Plan]
+    Fix --> More_Resources[Get More Resources]
+    Fix --> Change_Goal[Change the Goal]
+    
+    Adjust --> Start_Work
+    More_Resources --> Start_Work
+    Change_Goal --> Start_Work
+    
+    Continue --> Done{Goal Achieved?}
+    
+    Done -->|Yes| Success[We Did It!]
+    Done -->|No| Check_Budget{Still Have Budget?}
+    
+    Check_Budget -->|Yes| Watch
+    Check_Budget -->|No| Decision[Stop or Get More?]
+    
+    Success --> Report[Create Final Report]
+    Decision --> Report
+    Report --> End[Project Complete]
+
+    style Start fill:#e1f5fe
+    style Create fill:#fff59d
+    style Watch fill:#fff9c4
+    style Done fill:#f3e5f5
+    style End fill:#c8e6c9

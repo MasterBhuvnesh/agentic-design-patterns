@@ -1,0 +1,67 @@
+graph TD
+    Start[Documents to Search] --> Read[Read Documents]
+    
+    Read --> Parse[Extract the Text]
+    Parse --> GetInfo[Get Document Info]
+    GetInfo --> AddTags[Add Tags and Labels]
+    
+    AddTags --> Split{How to Split Text?}
+    
+    Split --> Fixed[Equal Size Chunks]
+    Split --> Smart[Natural Breaks]
+    Split --> Context[Keep Related Parts Together]
+    
+    Fixed --> Process[Process Each Chunk]
+    Smart --> Process
+    Context --> Process
+    
+    Process --> Convert[Convert to Searchable Format]
+    Convert --> Store[Store in Search Database]
+    
+    Store --> Ready[System Ready to Search]
+    
+    Ready --> Question[User Asks Question]
+    Question --> Improve[Make Question Better]
+    
+    Improve --> Expand[Add Related Words]
+    Expand --> Search[Search Database]
+    
+    Search --> Find[Find Matching Chunks]
+    Find --> Filter[Remove Irrelevant Ones]
+    
+    Filter --> Rank{Rank by Relevance}
+    
+    Rank --> Score[Give Each a Score]
+    Score --> Sort[Sort Best to Worst]
+    Sort --> Pick[Pick Top Matches]
+    
+    Pick --> Verify[Check Sources are Good]
+    Verify --> Use[Use Sources for Answer]
+    
+    Use --> Generate[Create Answer]
+    Generate --> Cite[Add Source References]
+    
+    Cite --> Quality{Is Answer Good?}
+    
+    Quality -->|Yes| Deliver[Give Answer to User]
+    Quality -->|No| Redo[Try Different Search]
+    
+    Redo --> Adjust[Change Search Settings]
+    Adjust --> Search
+    
+    Deliver --> Track[Track How Well It Worked]
+    Track --> Measure[Measure Success]
+    
+    Measure --> Accuracy[How Accurate?]
+    Measure --> Coverage[How Complete?]
+    
+    Accuracy --> Improve_System[Make System Better]
+    Coverage --> Improve_System
+    
+    Improve_System --> End[Search Complete]
+
+    style Start fill:#e1f5fe
+    style Split fill:#fff59d
+    style Rank fill:#fff9c4
+    style Quality fill:#f3e5f5
+    style End fill:#c8e6c9

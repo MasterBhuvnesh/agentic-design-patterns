@@ -1,0 +1,54 @@
+╔═════════════════════════════════════════════════════════════════╗
+║              21 AGENTIC DESIGN PATTERNS - OVERVIEW              ║
+╚═════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────┐
+│                        CORE PATTERNS                            │
+├─────────────────────────────────────────────────────────────────┤
+│ 1. PROMPT CHAINING:    Task1 → Task2 → Task3 → Merge            │
+│ 2. ROUTING:            Request → Router → Specialized Agent     │
+│ 3. PARALLELIZATION:    Split → [W1|W2|W3|W4] → Merge            │
+│ 4. REFLECTION:         Generate → Critique → Revise → Final     │
+│ 5. TOOL USE:           Agent → Select Tool → Call → Process     │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                      ADVANCED PATTERNS                          │
+├─────────────────────────────────────────────────────────────────┤
+│ 6. PLANNING:           Goal → Milestones → Execute → Monitor    │
+│ 7. MULTI-AGENT:        Coordinator → [A1|A2|A3|A4] → Output     │
+│ 8. MEMORY:             Input → Classify → Store → Retrieve      │
+│ 9. LEARNING:           Feedback → Learn → Test → Deploy         │
+│ 10. MCP:               Registry → Discover → Authorize → Call   │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                       SYSTEM PATTERNS                           │
+├─────────────────────────────────────────────────────────────────┤
+│ 11. GOAL SETTING:      SMART → KPIs → Monitor → Achieve         │
+│ 12. EXCEPTION:         Try → Error → Classify → Recover         │
+│ 13. HUMAN-IN-LOOP:     AI → Decision Gate → Human → Learn       │
+│ 14. RAG:               Index → Query → Retrieve → Generate      │
+│ 15. A2A COMM:          Agent → Message Broker → Agent           │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    OPTIMIZATION PATTERNS                        │
+├─────────────────────────────────────────────────────────────────┤
+│ 16. RESOURCE-AWARE:    Classify → Route Model → Monitor         │
+│ 17. REASONING:         Problem → Method (CoT/ToT/SC) → Solve    │
+│ 18. GUARDRAILS:        Input → Sanitize → Risk → Moderate       │
+│ 19. EVALUATION:        Tests → Monitor → Detect → Optimize      │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                     STRATEGIC PATTERNS                          │
+├─────────────────────────────────────────────────────────────────┤
+│ 20. PRIORITIZATION:    Score Tasks → Rank → Execute → Reorder   │
+│ 21. EXPLORATION:       Scout → Cluster → Deep Dive → Discover   │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+ For Miro Board: Each pattern has its own detailed ASCII diagram
+ Files: ascii-art/[pattern-name].txt
+═══════════════════════════════════════════════════════════════════

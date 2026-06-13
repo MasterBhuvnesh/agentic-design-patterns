@@ -1,0 +1,41 @@
+╔══════════════════════════════════════════════════╗
+║           PROMPT CHAINING PATTERN                 ║
+╚══════════════════════════════════════════════════╝
+
+    [INPUT] 
+       ↓
+    ┌──────────┐
+    │  TASK 1  │ → JSON Schema
+    └──────────┘
+       ↓ validate
+    ┌──────────┐
+    │  TASK 2  │ → JSON Schema
+    └──────────┘
+       ↓ validate
+    ┌──────────┐
+    │  TASK 3  │ → JSON Schema
+    └──────────┘
+       ↓ validate
+    ┌──────────┐
+    │  MERGE   │
+    │ RESULTS  │
+    └──────────┘
+       ↓
+    [OUTPUT]
+
+KEY CONCEPTS:
+• Sequential execution
+• Validated handoffs
+• Modular sub-tasks
+• Structured data contracts
+
+SUMMARY:
+Prompt Chaining decomposes a complex task into a
+sequence of smaller, focused sub-tasks. Each step
+produces structured output (e.g. JSON) that is
+validated before being passed to the next step.
+If validation fails, the step retries until its
+output meets the defined schema. Once all steps
+succeed, their results are merged into a final
+deliverable. This pattern trades latency for
+reliability, modularity, and debuggability.

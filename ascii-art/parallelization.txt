@@ -1,0 +1,43 @@
+╔══════════════════════════════════════════════════╗
+║           PARALLELIZATION PATTERN                 ║
+╚══════════════════════════════════════════════════╝
+
+         [LARGE TASK]
+              ↓
+         ┌─────────┐
+         │  SHARD  │
+         └─────────┘
+         ↙  ↙  ↘  ↘
+       W1  W2  W3  W4   ← Rate Limited (max 10)
+       ║   ║   ║   ║
+       ▼   ▼   ▼   ▼    (Concurrent)
+      ┌─┐ ┌─┐ ┌─┐ ┌─┐
+      │A│ │B│ │C│ │D│   With retry
+      └─┘ └─┘ └─┘ └─┘   & backoff
+       ↓   ↓   ↓   ↓
+       └───┴───┴───┘
+             ↓
+       ┌──────────┐
+       │  MERGE   │
+       │ RESULTS  │
+       └──────────┘
+             ↓
+         [OUTPUT]
+
+KEY CONCEPTS:
+• Independent units
+• Concurrent execution
+• Rate limiting
+• Result aggregation
+
+SUMMARY:
+Parallelization splits a large task into
+independent units and processes them concurrently
+across multiple workers. A sharding step divides
+the input; workers execute in parallel under a
+rate limit, retrying on failure with backoff.
+Once all workers finish, results are merged into
+a single consolidated output. The pattern trades
+coordination complexity and higher resource cost
+for dramatic speed gains on workloads where
+sub-tasks have no mutual dependencies.

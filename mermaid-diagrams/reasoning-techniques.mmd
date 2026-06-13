@@ -1,0 +1,72 @@
+graph TD
+    Start[Hard Problem to Solve] --> Choose{Pick Best Way to Think}
+    
+    Choose -->|Step by Step| StepByStep[Think Through Each Step]
+    Choose -->|Explore Options| Tree[Explore Different Paths]
+    Choose -->|Double Check| Multiple[Try Multiple Ways]
+    Choose -->|Debate It| Debate[Argue Both Sides]
+    Choose -->|Think and Do| ThinkDo[Think Then Act, Repeat]
+    
+    StepByStep --> Steps[Break Into Steps]
+    Steps --> Think1[Step 1: First Thought]
+    Think1 --> Think2[Step 2: Next Thought]
+    Think2 --> Think3[Step 3: Final Thought]
+    
+    Tree --> Branch[Create Different Ideas]
+    Branch --> Explore[Explore Each Path]
+    Explore --> Compare[Compare Options]
+    Compare --> Remove[Remove Bad Paths]
+    
+    Multiple --> Make[Make Several Solutions]
+    Make --> Path1[Solution Method 1]
+    Make --> Path2[Solution Method 2]
+    Make --> Path3[Solution Method 3]
+    
+    Debate --> For[Arguments For]
+    Debate --> Against[Arguments Against]
+    For --> Discuss[Compare Arguments]
+    Against --> Discuss
+    
+    ThinkDo --> Think[Think About It]
+    Think --> Act[Take Action]
+    Act --> See[See What Happens]
+    See --> Think
+    
+    Think3 --> Grade[Grade Solutions]
+    Remove --> Grade
+    Path1 --> Grade
+    Path2 --> Grade
+    Path3 --> Grade
+    Discuss --> Grade
+    
+    Grade --> Test{Test Against Standards}
+    
+    Test --> Check[Check Logic]
+    Check --> Verify[Verify It Works]
+    Verify --> Rank[Rank Best to Worst]
+    
+    Rank --> Pick{Pick Winner}
+    
+    Pick -->|One Best| UseBest[Use Best Solution]
+    Pick -->|Several Good| Combine[Combine Good Parts]
+    
+    UseBest --> Limit{Too Many Steps?}
+    Combine --> Limit
+    
+    Limit -->|OK| Continue[Keep Going]
+    Limit -->|Too Many| Trim[Remove Extra Steps]
+    
+    Continue --> Save[Save the Work]
+    Trim --> Save
+    
+    Save --> Keep[Keep for Later Use]
+    Keep --> CanReuse[Can Use Again]
+    
+    CanReuse --> Answer[Final Solution]
+    Answer --> End[Problem Solved]
+
+    style Start fill:#e1f5fe
+    style Choose fill:#fff59d
+    style Test fill:#fff9c4
+    style Pick fill:#f3e5f5
+    style End fill:#c8e6c9

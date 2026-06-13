@@ -1,0 +1,60 @@
+graph TD
+    Start[Agent Processing] --> Identify[Identify Decision Points]
+    
+    Identify --> Gates{Decision Gates}
+    
+    Gates --> Approve[Approval Required]
+    Gates --> Review[Review Needed]
+    Gates --> Edit[Editing Checkpoint]
+    Gates --> Complex[Complex Case]
+    
+    Approve --> Queue[Add to Review Queue]
+    Review --> Queue
+    Edit --> Queue
+    Complex --> Queue
+    
+    Queue --> Batch[Batch Similar Items]
+    Batch --> Priority[Prioritize by Urgency]
+    
+    Priority --> UI[Present in UI]
+    UI --> Context[Show Full Context]
+    Context --> Diff[Display Differences]
+    Diff --> SLA[Show SLA Timer]
+    
+    SLA --> Human{Human Decision}
+    
+    Human -->|Approve| Accept[Accept Agent Output]
+    Human -->|Deny| Reject[Reject with Reason]
+    Human -->|Edit| Modify[Human Edits Content]
+    Human -->|Takeover| Manual[Full Manual Control]
+    
+    Accept --> Continue[Continue Workflow]
+    Reject --> Learn1[Capture Rejection Pattern]
+    Modify --> Learn2[Record Edit Changes]
+    Manual --> Learn3[Log Takeover Reason]
+    
+    Learn1 --> Update[Update Agent Training]
+    Learn2 --> Update
+    Learn3 --> Update
+    
+    Update --> Improve[Improve Future Decisions]
+    
+    Continue --> Track[Track Decision Metrics]
+    Improve --> Track
+    
+    Track --> Fatigue{Monitor Fatigue}
+    
+    Fatigue -->|High| Reduce[Reduce Human Load]
+    Fatigue -->|Normal| Maintain[Maintain Current Flow]
+    
+    Reduce --> Automate[Increase Automation]
+    Maintain --> Report[Generate Reports]
+    Automate --> Report
+    
+    Report --> End[Process Complete]
+
+    style Start fill:#e1f5fe
+    style Gates fill:#fff59d
+    style Human fill:#fff9c4
+    style Fatigue fill:#f3e5f5
+    style End fill:#c8e6c9

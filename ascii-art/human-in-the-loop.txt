@@ -1,0 +1,49 @@
+╔══════════════════════════════════════════════════╗
+║         HUMAN-IN-THE-LOOP (HITL)                  ║
+╚══════════════════════════════════════════════════╝
+
+       [AI PROCESS]
+           ↓
+    ┌──────────────┐
+    │  DECISION    │
+    │   GATES      │
+    └──────────────┘
+      ↙    ↓    ↘
+   High   Edge  Complex
+   Risk   Case   Task
+     ↓     ↓      ↓
+    ┌──────────────┐
+    │ REVIEW QUEUE │← Priority/SLA
+    └──────────────┘
+           ↓
+    ╔═══════════╗
+    ║   HUMAN   ║
+    ║   REVIEW  ║
+    ╚═══════════╝
+      ↙   ↓   ↘
+  Approve Edit Reject
+     ↓    ↓    ↓
+    ┌──────────────┐
+    │   CAPTURE    │
+    │   FEEDBACK   │
+    └──────────────┘
+           ↓
+    [LEARN & IMPROVE]
+
+KEY CONCEPTS:
+• Decision gates
+• Review queues
+• Human feedback
+• Continuous learning
+
+SUMMARY:
+Human-in-the-Loop routes AI decisions through
+human review at critical checkpoints. Decision
+gates identify high-risk, edge-case, or complex
+items and place them in a prioritized queue.
+A human reviewer can approve, edit, or reject
+each item, and the system captures that feedback
+to improve future decisions. Over time, fatigue
+monitoring adjusts the automation level so humans
+focus only where they add the most value. This
+pattern trades throughput for safety and trust.

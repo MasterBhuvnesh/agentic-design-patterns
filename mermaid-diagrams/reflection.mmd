@@ -1,0 +1,42 @@
+graph TD
+    Start[Initial Request] --> Generate[Generate First Draft]
+    Generate --> Output1[Initial Output]
+    
+    Output1 --> Critic{Critic Agent Review}
+    
+    Critic --> Rubric[Apply Quality Rubrics]
+    Critic --> Tests[Run Unit Tests]
+    Critic --> Check[Grammar & Logic Check]
+    
+    Rubric --> Score1{Quality Score}
+    Tests --> Score2{Test Results}
+    Check --> Score3{Check Results}
+    
+    Score1 --> Evaluate{Meets Criteria?}
+    Score2 --> Evaluate
+    Score3 --> Evaluate
+    
+    Evaluate -->|No| Feedback[Generate Structured Feedback]
+    Evaluate -->|Yes| Accept[Accept Output]
+    
+    Feedback --> Revise[Revision Agent]
+    Revise --> Address[Address Each Issue]
+    Address --> Output2[Revised Output]
+    
+    Output2 --> Counter{Iteration Count}
+    Counter -->|< Max| Critic
+    Counter -->|>= Max| Converge[Use Best Version]
+    
+    Accept --> Record[Record Success Patterns]
+    Converge --> Record
+    
+    Record --> Learn[Update Prompts/Rules]
+    Learn --> Final[Final Output]
+    Final --> End[Deliver Result]
+
+    style Start fill:#e1f5fe
+    style Critic fill:#fff59d
+    style Evaluate fill:#fff9c4
+    style Accept fill:#c8e6c9
+    style Converge fill:#ffccbc
+    style End fill:#c8e6c9

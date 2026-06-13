@@ -1,0 +1,71 @@
+graph TD
+    Start[Task Request] --> Analyze[Analyze Complexity]
+    
+    Analyze --> Budget{Set Budgets}
+    
+    Budget --> Token[Token Limits]
+    Budget --> Time[Time Constraints]
+    Budget --> Cost[Money Budget]
+    
+    Token --> Router[Router Agent]
+    Time --> Router
+    Cost --> Router
+    
+    Router --> Classify{Classify Complexity}
+    
+    Classify -->|Simple| Cheap[Use Small Model]
+    Classify -->|Medium| Standard[Use Standard Model]
+    Classify -->|Complex| Premium[Use Advanced Model]
+    Classify -->|Unknown| Test[Run Quick Test]
+    
+    Test --> Confidence{Check Confidence}
+    
+    Confidence -->|Low| Escalate[Escalate to Better Model]
+    Confidence -->|High| Proceed[Continue with Current]
+    
+    Cheap --> Execute[Execute Task]
+    Standard --> Execute
+    Premium --> Execute
+    Escalate --> Execute
+    Proceed --> Execute
+    
+    Execute --> Monitor[Monitor Resources]
+    
+    Monitor --> Track{Track Usage}
+    
+    Track --> Tokens[Token Count]
+    Track --> Latency[Response Time]
+    Track --> Costs[API Costs]
+    
+    Tokens --> Check{Within Limits?}
+    Latency --> Check
+    Costs --> Check
+    
+    Check -->|Yes| Continue[Continue Processing]
+    Check -->|No| Optimize[Optimization Needed]
+    
+    Optimize --> Prune[Prune Context]
+    Optimize --> Cache[Use Cached Results]
+    Optimize --> Downgrade[Switch to Cheaper Model]
+    
+    Prune --> Retry[Retry Operation]
+    Cache --> Retry
+    Downgrade --> Retry
+    
+    Continue --> Complete[Task Complete]
+    Retry --> Monitor
+    
+    Complete --> Measure[Measure Quality/Cost]
+    Measure --> Delta[Calculate Delta]
+    
+    Delta --> Tune[Tune Thresholds]
+    Tune --> Learn[Update Router Logic]
+    
+    Learn --> Report[Generate Report]
+    Report --> End[Optimized Execution]
+
+    style Start fill:#e1f5fe
+    style Classify fill:#fff59d
+    style Check fill:#fff9c4
+    style Delta fill:#f3e5f5
+    style End fill:#c8e6c9

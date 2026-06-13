@@ -1,0 +1,59 @@
+graph TD
+    Start[System Operation] --> Collect[Collect Feedback Signals]
+    
+    Collect --> Sources{Feedback Sources}
+    Sources --> User[User Corrections]
+    Sources --> Ratings[Quality Ratings]
+    Sources --> Evals[Automated Evaluations]
+    Sources --> Outcomes[Task Outcomes]
+    
+    User --> Aggregate[Aggregate Signals]
+    Ratings --> Aggregate
+    Evals --> Aggregate
+    Outcomes --> Aggregate
+    
+    Aggregate --> Clean{Data Quality Check}
+    Clean -->|Noisy| Filter[Filter Noise]
+    Clean -->|Adversarial| Reject[Reject Malicious]
+    Clean -->|Clean| Process[Process Feedback]
+    
+    Filter --> Validate[Validate Patterns]
+    Reject --> Log[Log Security Event]
+    Process --> Validate
+    
+    Validate --> Learn{Learning Method}
+    
+    Learn -->|Prompts| UpdatePrompts[Update Prompt Templates]
+    Learn -->|Policies| UpdatePolicies[Adjust Decision Policies]
+    Learn -->|Examples| AddExamples[Add to Few-Shot Examples]
+    Learn -->|Preferences| UpdatePrefs[Update Preference Rules]
+    Learn -->|FineTune| PrepareData[Prepare Training Data]
+    
+    UpdatePrompts --> Test[A/B Testing]
+    UpdatePolicies --> Test
+    AddExamples --> Test
+    UpdatePrefs --> Test
+    
+    PrepareData --> Curate[Curate Dataset]
+    Curate --> Train[Fine-tune Adapters]
+    Train --> Test
+    
+    Test --> Monitor{Monitor Performance}
+    
+    Monitor -->|Improvement| Deploy[Deploy Changes]
+    Monitor -->|Regression| Rollback[Rollback Changes]
+    Monitor -->|Neutral| Iterate[Continue Learning]
+    
+    Deploy --> Track[Track Metrics]
+    Rollback --> Analyze[Analyze Failure]
+    Iterate --> Collect
+    
+    Track --> Report[Generate Learning Report]
+    Analyze --> Report
+    Report --> End[System Improved]
+
+    style Start fill:#e1f5fe
+    style Clean fill:#fff9c4
+    style Learn fill:#fff59d
+    style Monitor fill:#f3e5f5
+    style End fill:#c8e6c9

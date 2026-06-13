@@ -1,0 +1,39 @@
+graph TD
+    Start[Customer Request] --> Look[Look at What They Need]
+    Look --> Decide{Which Expert Should Handle This?}
+    
+    Decide -->|Technical Problem| Tech[Send to Tech Support]
+    Decide -->|Want to Buy| Sales[Send to Sales Team]
+    Decide -->|Account Question| Account[Send to Account Help]
+    Decide -->|General Question| General[Send to General Assistant]
+    Decide -->|Not Sure| Ask[Ask for More Details]
+    
+    Tech --> TechTools[Give Access to Tech Guides]
+    Sales --> SalesTools[Give Access to Product Info]
+    Account --> AccountTools[Give Access to User Account]
+    General --> GeneralTools[Give Access to FAQ]
+    
+    TechTools --> Work1[Work on Tech Problem]
+    SalesTools --> Work2[Work on Sales Question]
+    AccountTools --> Work3[Work on Account Issue]
+    GeneralTools --> Work4[Work on General Question]
+    Ask --> Understand[Better Understand Request]
+    
+    Work1 --> Check{Is Answer Good?}
+    Work2 --> Check
+    Work3 --> Check
+    Work4 --> Check
+    Understand --> Decide
+    
+    Check -->|Yes| Answer[Send Answer to Customer]
+    Check -->|No| Backup[Get Human Help]
+    
+    Answer --> Record[Record What Happened]
+    Backup --> Record
+    Record --> End[Complete]
+
+    style Start fill:#e1f5fe
+    style Decide fill:#fff59d
+    style Ask fill:#ffccbc
+    style Check fill:#fff9c4
+    style End fill:#c8e6c9

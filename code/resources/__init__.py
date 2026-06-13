@@ -1,0 +1,1 @@
+''' Resource modules for the application '''

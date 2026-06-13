@@ -1,0 +1,26 @@
+graph TD
+    Start[User Request] --> Break[Break Down Into Small Steps]
+    Break --> Define[Set Rules for Each Step]
+    Define --> Task1[Do First Task]
+    Task1 --> Check1{Is Output Good?}
+    Check1 -->|Yes| Task2[Do Second Task]
+    Check1 -->|No| Retry1[Try Again]
+    Retry1 --> Task1
+    Task2 --> Check2{Is Output Good?}
+    Check2 -->|Yes| Task3[Do Third Task with Tools]
+    Check2 -->|No| Retry2[Try Again]
+    Retry2 --> Task2
+    Task3 --> Check3{Is Output Good?}
+    Check3 -->|Yes| Combine[Combine All Results]
+    Check3 -->|No| Retry3[Try Again]
+    Retry3 --> Task3
+    Combine --> Build[Build Final Answer]
+    Build --> Save[Save Work and Notes]
+    Save --> End[Deliver Complete Result]
+
+    style Start fill:#e1f5fe
+    style End fill:#c8e6c9
+    style Check1 fill:#fff9c4
+    style Check2 fill:#fff9c4
+    style Check3 fill:#fff9c4
+    style Task3 fill:#f3e5f5

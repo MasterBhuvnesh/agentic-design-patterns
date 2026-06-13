@@ -1,0 +1,52 @@
+╔══════════════════════════════════════════════════╗
+║       KNOWLEDGE RETRIEVAL (RAG)                   ║
+╚══════════════════════════════════════════════════╝
+
+     [DOCUMENTS]
+          ↓
+    ┌──────────┐
+    │  PARSE   │
+    │  & CHUNK │
+    └──────────┘
+          ↓
+    ┌──────────┐
+    │  EMBED   │→ Vector DB
+    └──────────┘
+          ↓
+    ═══════════════
+          ↓
+     [USER QUERY]
+          ↓
+    ┌──────────┐
+    │ REWRITE  │
+    │  EXPAND  │
+    └──────────┘
+          ↓
+    🔍 SEARCH
+          ↓
+    ┌──────────┐
+    │  TOP-K   │
+    │  RERANK  │
+    └──────────┘
+          ↓
+    [CONTEXT + LLM]
+          ↓
+    Answer + Citations
+
+KEY CONCEPTS:
+• Semantic chunking
+• Vector search
+• Query enhancement
+• Source grounding
+
+SUMMARY:
+Knowledge Retrieval (RAG) grounds LLM answers in
+real documents. At index time, sources are parsed,
+chunked, and embedded into a vector database. At
+query time, the user question is rewritten and
+expanded, then matched against stored embeddings.
+Top-K results are reranked for relevance and fed
+as context to the LLM, which generates an answer
+with citations. This pattern trades infrastructure
+complexity for factual accuracy and verifiable,
+up-to-date responses.

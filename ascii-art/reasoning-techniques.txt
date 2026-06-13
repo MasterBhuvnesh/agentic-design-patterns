@@ -1,0 +1,45 @@
+╔══════════════════════════════════════════════════╗
+║          REASONING TECHNIQUES                     ║
+╚══════════════════════════════════════════════════╝
+
+       [PROBLEM]
+          ↓
+    ┌──────────┐
+    │  SELECT  │
+    │  METHOD  │
+    └──────────┘
+    ↙   ↓   ↓   ↘
+  CoT  ToT  SC  ReAct
+   ↓    ↓   ↓    ↓
+Step  Tree Multi Think
+by    of   Path  +Act
+Step  Ideas Check Loop
+   ↓    ↓    ↓    ↓
+   └────┴────┴────┘
+          ↓
+    ┌──────────┐
+    │  SCORE   │← Rubrics
+    │ SOLUTIONS│
+    └──────────┘
+          ↓
+    Best or Merge
+          ↓
+    [SOLUTION]
+
+METHODS:
+• CoT: Chain of Thought
+• ToT: Tree of Thoughts  
+• SC: Self-Consistency
+• ReAct: Reason + Act
+
+SUMMARY:
+Reasoning Techniques select and apply structured
+thinking methods (CoT, ToT, Self-Consistency,
+ReAct) to solve complex problems. A classifier
+picks the best method based on problem type,
+then generates solutions via that approach.
+Multiple solutions are scored against rubrics
+and the best result is chosen or merged.
+This pattern trades token cost and latency for
+higher accuracy, transparent reasoning traces,
+and robust multi-path validation.

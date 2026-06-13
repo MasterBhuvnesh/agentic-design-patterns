@@ -1,0 +1,79 @@
+graph TD
+    Start[Task Queue] --> Build[Build Dependency Graph]
+    
+    Build --> Map[Map Dependencies]
+    Map --> Tasks[Task List]
+    Tasks --> T1[Task 1]
+    Tasks --> T2[Task 2]
+    Tasks --> T3[Task 3]
+    Tasks --> TN[Task N]
+    
+    T1 --> Score[Score Each Task]
+    T2 --> Score
+    T3 --> Score
+    TN --> Score
+    
+    Score --> Value{Scoring Factors}
+    
+    Value --> Business[Business Value]
+    Value --> Risk[Risk Level]
+    Value --> Effort[Effort Required]
+    Value --> Urgency[Time Sensitivity]
+    Value --> Dependencies[Dependency Count]
+    
+    Business --> Calculate[Calculate Priority Score]
+    Risk --> Calculate
+    Effort --> Calculate
+    Urgency --> Calculate
+    Dependencies --> Calculate
+    
+    Calculate --> Formula[Priority = Value/Effort × Urgency × Risk]
+    
+    Formula --> Rank[Rank Tasks]
+    Rank --> Order[Initial Order]
+    
+    Order --> Schedule{Scheduling Strategy}
+    
+    Schedule --> Quota[Apply Quotas]
+    Schedule --> Aging[Task Aging]
+    Schedule --> Balance[Load Balance]
+    
+    Quota --> Prevent[Prevent Starvation]
+    Aging --> Boost[Boost Old Tasks]
+    Balance --> Distribute[Distribute Work]
+    
+    Prevent --> Queue2[Priority Queue]
+    Boost --> Queue2
+    Distribute --> Queue2
+    
+    Queue2 --> Execute[Execute Top Task]
+    
+    Execute --> Monitor{New High Priority?}
+    
+    Monitor -->|Yes| Preempt[Preempt Current]
+    Monitor -->|No| Continue[Continue Current]
+    
+    Preempt --> Save[Save State]
+    Save --> Switch[Switch to High Priority]
+    
+    Continue --> Complete{Task Complete?}
+    Switch --> Complete
+    
+    Complete -->|Yes| Remove[Remove from Queue]
+    Complete -->|No| Execute
+    
+    Remove --> Events{New Events?}
+    
+    Events -->|Yes| Reorder[Re-calculate Priorities]
+    Events -->|No| Next[Get Next Task]
+    
+    Reorder --> Rank
+    Next --> Execute
+    
+    Next --> End[Optimized Execution]
+
+    style Start fill:#e1f5fe
+    style Value fill:#fff59d
+    style Schedule fill:#fff9c4
+    style Monitor fill:#f3e5f5
+    style End fill:#c8e6c9

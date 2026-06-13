@@ -1,0 +1,54 @@
+graph TD
+    Start[Complex Task] --> Define[Define Specialist Roles]
+    
+    Define --> Roles[Agent Role Assignment]
+    Roles --> A1[Research Agent]
+    Roles --> A2[Analysis Agent]
+    Roles --> A3[Writer Agent]
+    Roles --> A4[Reviewer Agent]
+    Roles --> A5[Coordinator Agent]
+    
+    Roles --> Setup[Setup Shared Resources]
+    Setup --> Memory[Shared Memory Store]
+    Setup --> Artifacts[Artifact Repository]
+    Setup --> Version[Version Control]
+    
+    Memory --> Protocol{Coordination Protocol}
+    Artifacts --> Protocol
+    Version --> Protocol
+    
+    Protocol -->|Orchestrator| Orchestrate[Central Coordinator]
+    Protocol -->|Mesh| Mesh[Peer-to-Peer]
+    Protocol -->|Pipeline| Pipeline[Sequential Handoff]
+    
+    Orchestrate --> Coord[Coordinator Manages Flow]
+    Coord --> Task1[Assign to Research Agent]
+    Task1 --> Hand1[Handoff Contract Check]
+    Hand1 --> Task2[Pass to Analysis Agent]
+    Task2 --> Hand2[Handoff Contract Check]
+    Hand2 --> Task3[Send to Writer Agent]
+    Task3 --> Hand3[Handoff Contract Check]
+    Hand3 --> Task4[Review Agent Validation]
+    
+    Mesh --> Peer[Agents Communicate Directly]
+    Pipeline --> Sequence[Fixed Order Processing]
+    
+    Task4 --> Test{Acceptance Test}
+    Peer --> Test
+    Sequence --> Test
+    
+    Test -->|Pass| Log[Log Conversation Trace]
+    Test -->|Fail| Retry[Retry Collaboration]
+    
+    Retry --> Simulate[Run Simulation]
+    Simulate --> Protocol
+    
+    Log --> Decision[Record Decisions]
+    Decision --> Output[Consolidated Output]
+    Output --> End[Deliver Result]
+
+    style Start fill:#e1f5fe
+    style Protocol fill:#fff59d
+    style Test fill:#fff9c4
+    style Output fill:#f3e5f5
+    style End fill:#c8e6c9

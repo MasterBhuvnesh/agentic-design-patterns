@@ -1,0 +1,64 @@
+graph TD
+    Start[Try to Do Something] --> Wrap[Add Safety Checks]
+    
+    Wrap --> Call[Make the Call]
+    Call --> External[Call External Service]
+    External --> Tool[Use a Tool]
+    External --> Service[Use a Service]
+    
+    Tool --> Result{Did It Work?}
+    Service --> Result
+    
+    Result -->|Success| Process[Use the Result]
+    Result -->|Error| Catch[Catch the Error]
+    
+    Catch --> WhatKind{What Kind of Error?}
+    
+    WhatKind -->|Temporary| Retry[Try Again]
+    WhatKind -->|Permanent| Backup[Use Backup Plan]
+    WhatKind -->|Critical| Emergency[Emergency Response]
+    
+    Retry --> Wait[Wait a Bit]
+    Wait --> AddTime[Wait Longer Each Time]
+    AddTime --> Count{How Many Tries?}
+    
+    Count -->|Less Than Max| Call
+    Count -->|Too Many| Backup
+    
+    Backup --> Options{Backup Options}
+    
+    Options --> Simple[Use Simpler Method]
+    Options --> Saved[Use Saved Data]
+    Options --> Default[Use Default Answer]
+    Options --> Human[Get Human Help]
+    
+    Simple --> Recover[Start Recovery]
+    Saved --> Recover
+    Default --> Recover
+    Human --> Recover
+    
+    Emergency --> SaveWork[Save Current Work]
+    SaveWork --> Alert[Alert the Team]
+    
+    Alert --> Safety{Is It Safe to Continue?}
+    
+    Safety -->|Over Limit| Stop[Emergency Stop]
+    Safety -->|OK| Resume[Pick Up Where We Left Off]
+    
+    Recover --> Record[Record What Happened]
+    Resume --> Record
+    Stop --> Record
+    
+    Record --> Track[Track Error Patterns]
+    Track --> Learn[Learn From Errors]
+    
+    Learn --> Improve[Improve for Next Time]
+    Process --> Success[Task Completed]
+    Improve --> End[Continue Working]
+    Success --> End
+
+    style Start fill:#e1f5fe
+    style WhatKind fill:#fff59d
+    style Options fill:#fff9c4
+    style Safety fill:#ffccbc
+    style End fill:#c8e6c9
