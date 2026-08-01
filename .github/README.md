@@ -19,8 +19,10 @@ Detailed explanations covering:
 ###  ASCII Art Diagrams (`/ascii-art`)
 Text-based diagrams perfect for copying into Miro boards, documentation, or anywhere that doesn't support rich graphics.
 
-### 🧑 Code (`/code`)
-Runnable examples implementing each pattern with [LangChain](https://python.langchain.com) and NVIDIA NIM endpoints. See [Running the Code](#-running-the-code) to get started. Available so far: [Prompt Chaining](../code/prompt-chaining.py).
+###  Code (`/code`)
+Runnable examples implementing each pattern with [LangChain](https://python.langchain.com) and NVIDIA NIM endpoints. See [Running the Code](#-running-the-code) to get started. 
+
+Available so far: [Prompt Chaining](../code/prompt-chaining.py).
 
 ##  The 21 Patterns
 
