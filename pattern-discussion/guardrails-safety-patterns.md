@@ -1,5 +1,7 @@
 # Guardrails/Safety Patterns
 
+Guardrails and Safety Patterns wrap processing in multi-layer protection. Inputs are sanitized for PII, injection attacks, and harmful content. A risk scorer assigns a severity level that gates further processing: low risk proceeds, medium is limited, high requires human review, and critical is blocked outright. Outputs pass through policy and ethics checks before delivery. All decisions are logged for audit. This pattern trades latency and some false positives for robust protection against unsafe or non-compliant behavior.
+
 ## When to Use
 
 - **Public-facing systems**: Protecting users from harmful content

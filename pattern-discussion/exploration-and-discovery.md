@@ -1,5 +1,7 @@
 # Exploration and Discovery Pattern
 
+Exploration and Discovery starts with a broad scout across diverse sources (papers, data, web, experts), then maps and clusters findings into themes. High-novelty or high-impact clusters are selected for targeted deep dives. Insights from deep investigation feed hypothesis generation, which drives iterative experimentation looping back into further scouting. The cycle repeats until an iteration limit is reached, producing a documented set of discoveries. This pattern trades time and resources for systematic, serendipity-enabling knowledge accumulation.
+
 ## When to Use
 
 - **Research projects**: Investigating new domains

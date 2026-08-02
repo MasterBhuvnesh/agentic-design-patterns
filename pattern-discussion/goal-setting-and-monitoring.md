@@ -1,5 +1,7 @@
 # Goal Setting and Monitoring Pattern
 
+Goal Setting and Monitoring converts high-level objectives into SMART goals with measurable KPIs, SLAs, and resource constraints. During execution, real-time monitoring compares actual progress to targets. When drift is detected, the system triggers mitigation: adjusting the plan, adding resources, or revising the goal itself. Execution continues until the goal is achieved or budget is exhausted. This pattern trades management overhead for purpose-driven autonomy and early warning of off-track conditions.
+
 ## When to Use
 
 - **Autonomous operations**: When agents work independently toward objectives

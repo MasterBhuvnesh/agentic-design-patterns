@@ -1,5 +1,7 @@
 # Resource-Aware Optimization Pattern
 
+Resource-Aware Optimization classifies each task by complexity, then routes it to an appropriately sized model (small, standard, or large). During execution it monitors token usage, latency, and cost against budgets. If limits are exceeded, it optimizes via caching, context pruning, or model downgrade. This pattern trades routing overhead for significant cost savings while preserving output quality where it matters most.
+
 ## When to Use
 
 - **Cost-sensitive operations**: When managing API or compute costs

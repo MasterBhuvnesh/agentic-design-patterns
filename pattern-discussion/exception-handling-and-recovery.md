@@ -1,5 +1,7 @@
 # Exception Handling and Recovery Pattern
 
+Exception Handling and Recovery classifies errors into transient, permanent, or critical categories and routes each to a tailored strategy. Transient errors trigger retries with exponential backoff and jitter. Permanent errors invoke fallbacks such as cached data or simpler models. Critical failures escalate to humans after saving state via checkpoints. The system logs every failure for pattern analysis, enabling self-improvement. This pattern trades added complexity for graceful degradation and resilient autonomous operation.
+
 ## When to Use
 
 - **Production environments**: Any system requiring high reliability

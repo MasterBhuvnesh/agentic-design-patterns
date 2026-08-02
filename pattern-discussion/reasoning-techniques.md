@@ -1,5 +1,7 @@
 # Reasoning Techniques Pattern
 
+Reasoning Techniques select and apply structured thinking methods (CoT, ToT, Self-Consistency, ReAct) to solve complex problems. A classifier picks the best method based on problem type, then generates solutions via that approach. Multiple solutions are scored against rubrics and the best result is chosen or merged. This pattern trades token cost and latency for higher accuracy, transparent reasoning traces, and robust multi-path validation.
+
 ## When to Use
 
 - **Complex problem-solving**: Multi-step logical challenges

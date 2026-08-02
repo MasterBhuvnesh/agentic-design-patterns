@@ -1,5 +1,7 @@
 # Learning and Adaptation Pattern
 
+Learning and Adaptation lets an AI system improve itself from real-world feedback. Signals such as user edits, ratings, and task outcomes are aggregated, cleaned of noise, and validated. The system then updates prompts, policies, or few-shot examples and A/B tests each change. If metrics improve the update is deployed; if they regress it is rolled back. This pattern trades engineering complexity for continuous, measurable performance gains over time.
+
 ## When to Use
 
 - **Performance optimization**: When system needs to improve over time

@@ -1,5 +1,7 @@
 # Multi-Agent Collaboration Pattern
 
+Multi-Agent Collaboration assigns a complex task to several specialist agents, each optimized for a distinct role (research, analysis, writing, review). A coordinator orchestrates workflow via shared memory and handoff contracts that define what each agent must produce before the next one begins. Agents may work in pipeline, mesh, or orchestrated modes. This pattern trades coordination complexity and API cost for deep specialization, parallelism, and robustness.
+
 ## When to Use
 
 - **Complex, multi-faceted problems**: Tasks requiring diverse expertise

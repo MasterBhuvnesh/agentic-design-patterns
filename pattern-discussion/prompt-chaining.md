@@ -1,5 +1,7 @@
 # Prompt Chaining Pattern
 
+Prompt Chaining decomposes a complex task into a sequence of smaller, focused sub-tasks. Each step produces structured output (e.g. JSON) that is validated before being passed to the next step. If validation fails, the step retries until its output meets the defined schema. Once all steps succeed, their results are merged into a final deliverable. This pattern trades latency for reliability, modularity, and debuggability.
+
 ## When to Use
 
 - **Complex multi-step processes**: When you need to break down a complex task into discrete, manageable steps

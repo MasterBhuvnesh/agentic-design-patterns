@@ -1,5 +1,7 @@
 # Reflection Pattern
 
+Reflection generates an initial output, then feeds it to a critic agent that evaluates it against quality rubrics, tests, and checks. If the output fails, structured feedback is produced and a revision agent improves it. This generate-critique-revise loop repeats up to a fixed iteration limit to ensure convergence. The pattern trades added latency and cost for systematically higher quality by separating creation from evaluation.
+
 ## When to Use
 
 - **Quality-critical outputs**: When high accuracy and quality are non-negotiable

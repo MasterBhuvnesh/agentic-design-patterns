@@ -1,5 +1,7 @@
 # Prioritization Pattern
 
+Prioritization scores queued tasks by value, effort, urgency, and risk, then ranks them using a formula (Priority = Value/Effort x Urgency). Tasks are executed from the top of the ranked queue. When a higher-priority item arrives, the current task can be preempted and state saved. Aging and quotas prevent low-priority starvation. The pattern trades scoring overhead and context-switching cost for optimal resource utilization and responsive, fair task scheduling.
+
 ## When to Use
 
 - **Resource constraints**: Limited processing capacity

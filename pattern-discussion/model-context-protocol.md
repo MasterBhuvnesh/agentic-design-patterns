@@ -1,5 +1,7 @@
 # Model Context Protocol (MCP) Pattern
 
+Model Context Protocol provides a standardized interface for AI agents to discover and use external tools, data sources, and services. A registry publishes manifests describing available resources; agents query a discovery API, then invoke resources subject to permission checks. All calls are audited and traced. Version management handles API evolution gracefully. The pattern trades implementation overhead for enterprise-grade security, discoverability, and interoperability across diverse systems.
+
 ## When to Use
 
 - **Enterprise systems**: Building scalable, production-grade AI applications

@@ -1,5 +1,7 @@
 # Planning Pattern
 
+The Planning pattern decomposes a goal into milestones, builds a dependency graph, and allocates resources under constraints like time and budget. Execution proceeds step by step with checkpoints that monitor progress. When a step is blocked or new information arises, the agent replans dynamically rather than failing. This pattern trades upfront planning overhead for strategic, adaptive execution that handles complex, long-running, multi-step projects.
+
 ## When to Use
 
 - **Complex multi-step projects**: When tasks have multiple dependencies and phases

@@ -1,5 +1,7 @@
 # Knowledge Retrieval (RAG) Pattern
 
+Knowledge Retrieval (RAG) grounds LLM answers in real documents. At index time, sources are parsed, chunked, and embedded into a vector database. At query time, the user question is rewritten and expanded, then matched against stored embeddings. Top-K results are reranked for relevance and fed as context to the LLM, which generates an answer with citations. This pattern trades infrastructure complexity for factual accuracy and verifiable, up-to-date responses.
+
 ## When to Use
 
 - **Dynamic knowledge needs**: Accessing up-to-date information

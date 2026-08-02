@@ -1,5 +1,7 @@
 # Tool Use (Function Calling) Pattern
 
+Tool Use extends an LLM agent by giving it access to a registry of external functions (APIs, databases, web search, etc.). When the agent needs data or actions beyond text generation, it selects a tool, validates parameters, executes the call, and parses the result back into its reasoning context. Errors trigger retries or fallbacks. This pattern trades added latency and security complexity for real-time data and precise deterministic operations.
+
 ## When to Use
 
 - **External data access**: When agents need real-time or dynamic information

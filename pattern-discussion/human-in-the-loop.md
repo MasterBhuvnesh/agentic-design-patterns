@@ -1,5 +1,7 @@
 # Human-in-the-Loop (HITL) Pattern
 
+Human-in-the-Loop routes AI decisions through human review at critical checkpoints. Decision gates identify high-risk, edge-case, or complex items and place them in a prioritized queue. A human reviewer can approve, edit, or reject each item, and the system captures that feedback to improve future decisions. Over time, fatigue monitoring adjusts the automation level so humans focus only where they add the most value. This pattern trades throughput for safety and trust.
+
 ## When to Use
 
 - **High-stakes decisions**: When errors have significant consequences

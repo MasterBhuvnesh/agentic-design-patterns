@@ -1,5 +1,7 @@
 # Evaluation and Monitoring Pattern
 
+Evaluation and Monitoring defines quality gates and golden test sets before deployment, then continuously tracks accuracy, latency, cost, and drift in production. Collected metrics feed an anomaly detector that compares live performance against baselines. When a threshold is breached, the system alerts teams and can trigger automatic rollback or patching. Periodic audits refresh the test suite for continuous improvement. The pattern trades infrastructure overhead for early issue detection and data-driven optimization.
+
 ## When to Use
 
 - **Production systems**: Any system requiring reliability

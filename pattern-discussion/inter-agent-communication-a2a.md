@@ -1,5 +1,7 @@
 # Inter-Agent Communication (A2A) Pattern
 
+Inter-Agent Communication enables multiple specialized agents to collaborate via structured messages routed through a broker. Each message carries a correlation ID, TTL, and auth scope so conversations can be traced and secured. Agents send, receive, and reply through the broker while circuit breakers and deadlock detectors guard against runaway loops or stuck exchanges. This pattern trades communication overhead for modularity, fault isolation, and scalability.
+
 ## When to Use
 
 - **Complex workflows**: Tasks requiring multiple specialized agents

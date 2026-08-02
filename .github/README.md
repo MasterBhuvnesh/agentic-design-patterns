@@ -13,16 +13,18 @@ Visual flowcharts in plain English showing how each pattern works, designed to b
 Detailed explanations covering:
 - When to use each pattern
 - Where it fits in your architecture
+- Concise pattern definitions
 - Pros and cons
 - Implementation considerations
+- Embedded Mermaid diagrams
 
 ###  ASCII Art Diagrams (`/ascii-art`)
 Text-based diagrams perfect for copying into Miro boards, documentation, or anywhere that doesn't support rich graphics.
 
 ###  Code (`/code`)
-Runnable examples implementing each pattern with [LangChain](https://python.langchain.com) and NVIDIA NIM endpoints. See [Running the Code](#-running-the-code) to get started. 
+Runnable examples implementing each pattern with [LangChain](https://python.langchain.com) and NVIDIA NIM endpoints. See [Running the Code](#-running-the-code) to get started.
 
-Available so far: [Prompt Chaining](../code/prompt-chaining.py).
+Available so far: [Prompt Chaining](../code/prompt-chaining.py) - more examples in progress.
 
 ##  The 21 Patterns
 
@@ -139,8 +141,10 @@ Available so far: [Prompt Chaining](../code/prompt-chaining.py).
 ##  Quick Start
 
 Each pattern includes:
-- A visual diagram showing the flow
+- A visual diagram showing the flow (Mermaid + ASCII)
+- Embedded diagrams directly in pattern discussions
 - Plain English explanations
+- Concise pattern definitions
 - Real-world use cases
 - Implementation tips
 

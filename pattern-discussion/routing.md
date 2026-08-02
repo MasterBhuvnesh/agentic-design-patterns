@@ -1,5 +1,7 @@
 # Routing Pattern
 
+Routing classifies an incoming request by intent and assigns a confidence score, then dispatches it to the most appropriate specialized agent (e.g. tech, sales, support). Each agent has access to domain-specific tools. If confidence is too low, the router asks for clarification instead of guessing. This pattern trades an extra classification step for better specialization, scalability, and the ability to add new routes without disrupting existing ones.
+
 ## When to Use
 
 - **Multi-domain systems**: When handling diverse request types requiring different expertise

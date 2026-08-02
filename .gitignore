@@ -2,6 +2,7 @@
 .obsidian/
 __pycache__/
 .venv/
+.opencode/
 
 # Exclude specific files
 .env

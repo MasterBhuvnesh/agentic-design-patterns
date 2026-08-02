@@ -1,5 +1,7 @@
 # Parallelization Pattern
 
+Parallelization splits a large task into independent units and processes them concurrently across multiple workers. A sharding step divides the input; workers execute in parallel under a rate limit, retrying on failure with backoff. Once all workers finish, results are merged into a single consolidated output. The pattern trades coordination complexity and higher resource cost for dramatic speed gains on workloads where sub-tasks have no mutual dependencies.
+
 ## When to Use
 
 - **Large-scale data processing**: When processing multiple documents, records, or data sources

@@ -1,5 +1,7 @@
 # Memory Management Pattern
 
+Memory Management gives an agent persistent state across interactions. Incoming information is classified into short-term (buffer), episodic (events), or long-term (knowledge) stores, each indexed by recency, frequency, and topic. When context is needed, relevant memories are retrieved via filtered queries and checked against a TTL; expired entries are forgotten or archived. This pattern trades storage and retrieval overhead for continuity, personalization, and richer context.
+
 ## When to Use
 
 - **Conversational continuity**: Maintaining context across interactions
